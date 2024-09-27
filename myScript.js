@@ -46,7 +46,7 @@ function playRound(humanChoice, computerChoice){
 
 function playgame() {
     count = 0;
-    while (count < 6){
+    while (count < 5){
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
@@ -58,4 +58,9 @@ function playgame() {
     }else{
         console.log("The computer has won the game!")
     }
+
+    humanScore = 0;
+    computerScore = 0;
 }
+
+playgame();
