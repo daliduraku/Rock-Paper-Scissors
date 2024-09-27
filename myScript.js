@@ -1,4 +1,7 @@
 
+humanScore = 0;
+computerScore = 0;
+
 function getComputerChoice(){
     let num = Math.random();
 
@@ -10,4 +13,11 @@ function getComputerChoice(){
         return("scissors")
     }
 }
+
+function getHumanChoice(){
+    let choice = prompt("rock,paper,scissors,shoot!");
+    return choice.trim().toLowerCase();
+}
+
+
 
