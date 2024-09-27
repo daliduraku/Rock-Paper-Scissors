@@ -15,8 +15,11 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let choice = prompt("rock,paper,scissors,shoot!");
-    return choice.trim().toLowerCase();
+    let choice = prompt("rock,paper,scissors,shoot!").trim().toLowerCase();
+    while (!["rock", "paper", "scissors"].includes(choice)){
+        choice = prompt("Invalid choice! Please choose rock, paper, or scissors").trim().toLowerCase()
+    }
+    return choice;
 }
 
 
@@ -62,5 +65,6 @@ function playgame() {
     humanScore = 0;
     computerScore = 0;
 }
+
 
 playgame();
