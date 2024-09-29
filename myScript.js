@@ -2,6 +2,10 @@
 humanScore = 0;
 computerScore = 0;
 
+let rockBtn = document.querySelector(".rock-button");
+let paperBtn = document.querySelector('.paper-button');
+let scissorsBtn = document.querySelector('.scissors-button');
+
 function getComputerChoice(){
     let num = Math.random();
 
@@ -48,12 +52,7 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-let rockBtn = document.querySelector(".rock-button");
-let paperBtn = document.querySelector('.paper-button');
-let scissorsBtn = document.querySelector('.scissors-button');
-
-
-
+/*
 function playgame(choice) {
     while (humanScore < 6 || computerScore < 6){
         const humanSelection = choice
@@ -70,8 +69,14 @@ function playgame(choice) {
     humanScore = 0;
     computerScore = 0;
 }
+*/
 
-
-rockBtn.addEventListener('click', playgame('rock'));
-paperBtn.addEventListener('click', playgame('paper'));
-scissorsBtn.addEventListener('click', playgame('scissors'));
+rockBtn.addEventListener('click', function(){
+    playRound('rock', getComputerChoice());
+});
+paperBtn.addEventListener('click', function(){
+    playRound('paper', getComputerChoice());
+});
+scissorsBtn.addEventListener('click', function(){
+    playRound('scissors', getComputerChoice());
+});
