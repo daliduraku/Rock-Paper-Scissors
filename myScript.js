@@ -14,6 +14,7 @@ function getComputerChoice(){
     }
 }
 
+/*
 function getHumanChoice(){
     let choice = prompt("rock,paper,scissors,shoot!").trim().toLowerCase();
     while (!["rock", "paper", "scissors"].includes(choice)){
@@ -21,7 +22,7 @@ function getHumanChoice(){
     }
     return choice;
 }
-
+*/
 
 function playRound(humanChoice, computerChoice){
     if ( humanChoice === computerChoice) {
@@ -47,18 +48,17 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-let rockBtn = document.querySelector(".rock-button")
-let paperBtn = document.querySelector('.paper-button')
-let scissorsBtn = document.querySelector('.scissors-button')
+let rockBtn = document.querySelector(".rock-button");
+let paperBtn = document.querySelector('.paper-button');
+let scissorsBtn = document.querySelector('.scissors-button');
 
-function playgame() {
-    /*
-    count = 0;
-    while (count < 5){
-        const humanSelection = getHumanChoice();
+
+
+function playgame(choice) {
+    while (humanScore < 6 || computerScore < 6){
+        const humanSelection = choice
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
-        count ++;
     }
     
     if ( humanScore > computerScore){
@@ -69,8 +69,9 @@ function playgame() {
 
     humanScore = 0;
     computerScore = 0;
-    */
 }
 
 
-playgame();
+rockBtn.addEventListener('click', playgame('rock'));
+paperBtn.addEventListener('click', playgame('paper'));
+scissorsBtn.addEventListener('click', playgame('scissors'));
