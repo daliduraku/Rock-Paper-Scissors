@@ -48,6 +48,7 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playgame() {
+    /*
     count = 0;
     while (count < 5){
         const humanSelection = getHumanChoice();
@@ -64,6 +65,7 @@ function playgame() {
 
     humanScore = 0;
     computerScore = 0;
+    */
 }
 
 
