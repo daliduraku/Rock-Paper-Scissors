@@ -47,6 +47,10 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+let rockBtn = document.querySelector(".rock-button")
+let paperBtn = document.querySelector('.paper-button')
+let scissorsBtn = document.querySelector('.scissors-button')
+
 function playgame() {
     /*
     count = 0;
