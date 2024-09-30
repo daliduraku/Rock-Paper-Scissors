@@ -54,9 +54,9 @@ rockBtn.addEventListener('click', function(){
     // announce winner of the game 
     if (humanScore === 5 || computerScore === 5) {
         if ( humanScore > computerScore){
-            document.getElementById('round-result').innerHTML = `<p> "You are the winner!" </p>`
+            document.getElementById('round-result').innerHTML = `<p> You are the winner! </p>`
         }else{
-            document.getElementById('round-result').innerHTML = `<p> "The computer has won the game!" </p>`
+            document.getElementById('round-result').innerHTML = `<p> The computer has won the game! </p>`
         }
         // reset the game
         humanScore = 0;
