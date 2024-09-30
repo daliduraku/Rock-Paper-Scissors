@@ -30,25 +30,25 @@ function getHumanChoice(){
 
 function playRound(humanChoice, computerChoice){
     if ( humanChoice === computerChoice) {
-        return "The round was a tie"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }else if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore ++;
-        return "You win! Rock beats Scissors"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }else if (humanChoice === "rock" && computerChoice === "paper"){
         computerScore ++;
-        return "You lose! Paper beats Rock"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore ++;
-        return "You win! Paper beats Rock"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }else if (humanChoice === "paper" && computerChoice === "scissors"){
         computerScore ++;
-        return "You lose! Scissors beats Paper"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore++;
-        return "You win! Scissors beats Paper"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "rock"){
         computerScore ++;
-        return "You lose! Rock beats Scissors"
+        return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }
 }
 
@@ -77,21 +77,63 @@ rockBtn.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     const result = playRound(humanSelection, computerSelection);
 
+    // display the result
+    document.getElementById('round-result').innerHTML = `<p> ${result} </p>`
+
     // announce winner of the game 
-    if (humanScore === 5 || computerScore === 6) {
+    if (humanScore === 5 || computerScore === 5) {
         if ( humanScore > computerScore){
             document.getElementById('round-result').innerHTML = `<p> "You are the winner!" </p>`
         }else{
             document.getElementById('round-result').innerHTML = `<p> "The computer has won the game!" </p>`
         }
+        // reset the game
+        humanScore = 0;
+        computerScore = 0;
     }
+});
+paperBtn.addEventListener('click', function(){
+    // play a round of the game
+    const humanSelection = 'paper';
+    const computerSelection = getComputerChoice();
+    const result = playRound(humanSelection, computerSelection);
+
 
     // display the result
     document.getElementById('round-result').innerHTML = `<p> ${result} </p>`
-});
-paperBtn.addEventListener('click', function(){
-    playRound('paper', getComputerChoice());
+
+    // announce winner of the game
+    if (humanScore === 5 || computerScore === 5) {
+        if ( humanScore > computerScore){
+            document.getElementById('round-result').innerHTML = `<p> "You are the winner!" </p>`
+        }else{
+            document.getElementById('round-result').innerHTML = `<p> "The computer has won the game!" </p>`
+        }
+        // reset the game 
+        humanScore = 0;
+        computerScore = 0;
+    }
 });
 scissorsBtn.addEventListener('click', function(){
-    playRound('scissors', getComputerChoice());
+    // plays a round of game
+    const humanSelection = 'scissors';
+    const computerSelection = getComputerChoice();
+    const result = playRound(humanSelection, computerSelection);
+
+    // display the result
+    document.getElementById('round-result').innerHTML = `<p> ${result} </p>`
+    
+    // announce winner of the game 
+    if (humanScore === 5 || computerScore === 5) {
+        if ( humanScore > computerScore){
+            document.getElementById('round-result').innerHTML = `<p> "You are the winner!" </p>`
+        }else{
+            document.getElementById('round-result').innerHTML = `<p> "The computer has won the game!" </p>`
+        }
+
+        // reset the game
+        humanScore = 0;
+        computerScore = 0;
+    }
+
 });
