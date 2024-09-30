@@ -18,16 +18,6 @@ function getComputerChoice(){
     }
 }
 
-/*
-function getHumanChoice(){
-    let choice = prompt("rock,paper,scissors,shoot!").trim().toLowerCase();
-    while (!["rock", "paper", "scissors"].includes(choice)){
-        choice = prompt("Invalid choice! Please choose rock, paper, or scissors").trim().toLowerCase()
-    }
-    return choice;
-}
-*/
-
 function playRound(humanChoice, computerChoice){
     if ( humanChoice === computerChoice) {
         return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
@@ -51,25 +41,6 @@ function playRound(humanChoice, computerChoice){
         return `Current score: You're score: ${humanScore}, Computer's score: ${computerScore}`
     }
 }
-
-/*
-function playgame(choice) {
-    while (humanScore < 6 || computerScore < 6){
-        const humanSelection = choice
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
-    
-    if ( humanScore > computerScore){
-        console.log("You are the winner!")
-    }else{
-        console.log("The computer has won the game!")
-    }
-
-    humanScore = 0;
-    computerScore = 0;
-}
-*/
 
 rockBtn.addEventListener('click', function(){
     // plays a round of game
