@@ -30,25 +30,25 @@ function getHumanChoice(){
 
 function playRound(humanChoice, computerChoice){
     if ( humanChoice === computerChoice) {
-        console.log ("The round was a tie")
+        return "The round was a tie"
     }else if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore ++;
-        console.log ("You win! Rock beats Scissors")
+        return "You win! Rock beats Scissors"
     }else if (humanChoice === "rock" && computerChoice === "paper"){
         computerScore ++;
-        console.log ("You lose! Paper beats Rock")
+        return "You lose! Paper beats Rock"
     }else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore ++;
-        console.log ("You win! Paper beats Rock")
+        return "You win! Paper beats Rock"
     }else if (humanChoice === "paper" && computerChoice === "scissors"){
         computerScore ++;
-        console.log ("You lose! Scissors beats Paper")
+        return "You lose! Scissors beats Paper"
     }else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore++;
-        console.log ("You win! Scissors beats Paper")
+        return "You win! Scissors beats Paper"
     } else if (humanChoice === "scissors" && computerChoice === "rock"){
         computerScore ++;
-        console.log ("You lose! Rock beats Scissors")
+        return "You lose! Rock beats Scissors"
     }
 }
 
@@ -72,7 +72,22 @@ function playgame(choice) {
 */
 
 rockBtn.addEventListener('click', function(){
-    playRound('rock', getComputerChoice());
+    // plays a round of game
+    const humanSelection = 'rock';
+    const computerSelection = getComputerChoice();
+    const result = playRound(humanSelection, computerSelection);
+
+    // announce winner of the game 
+    if (humanScore === 5 || computerScore === 6) {
+        if ( humanScore > computerScore){
+            document.getElementById('round-result').innerHTML = `<p> "You are the winner!" </p>`
+        }else{
+            document.getElementById('round-result').innerHTML = `<p> "The computer has won the game!" </p>`
+        }
+    }
+
+    // display the result
+    document.getElementById('round-result').innerHTML = `<p> ${result} </p>`
 });
 paperBtn.addEventListener('click', function(){
     playRound('paper', getComputerChoice());
